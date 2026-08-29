@@ -19,11 +19,12 @@ export const siteConfig = {
  * Cria uma URL de WhatsApp com contexto para a conversa.
  * @reutilizavel sim
  */
-export function getWhatsAppUrl(message = "Olá Márcio, vim pelo seu site e quero falar sobre um projeto.") {
+export function getWhatsAppUrl(
+  message = "Olá Márcio, vim pelo seu site e quero falar sobre um projeto."
+) {
   const phone = siteConfig.whatsappNumber;
   const encodedMessage = encodeURIComponent(message);
 
   // Mantém o marcador explícito até que o número real seja informado.
   return `https://wa.me/${phone}?text=${encodedMessage}`;
 }
-

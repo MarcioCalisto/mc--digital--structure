@@ -11,11 +11,22 @@ type GlassPanelProps = HTMLAttributes<HTMLDivElement> & {
  * Recebe conteúdo filho, classes extras e o controle de interação por hover.
  * @reutilizavel sim
  */
-export function GlassPanel({ children, hoverable = false, className, ...props }: GlassPanelProps) {
+export function GlassPanel({
+  children,
+  hoverable = false,
+  className,
+  ...props
+}: GlassPanelProps) {
   return (
-    <div className={cn("glass-panel", hoverable && "glass-panel--interactive", className)} {...props}>
+    <div
+      className={cn(
+        "glass-panel",
+        hoverable && "glass-panel--interactive",
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   );
 }
-
