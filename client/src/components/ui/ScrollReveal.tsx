@@ -12,7 +12,11 @@ type ScrollRevealProps = {
  * Recebe o conteúdo filho, atraso de entrada e classes adicionais.
  * @reutilizavel sim
  */
-export function ScrollReveal({ children, delay = 0, className }: ScrollRevealProps) {
+export function ScrollReveal({
+  children,
+  delay = 0,
+  className,
+}: ScrollRevealProps) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -27,4 +31,3 @@ export function ScrollReveal({ children, delay = 0, className }: ScrollRevealPro
     </motion.div>
   );
 }
-

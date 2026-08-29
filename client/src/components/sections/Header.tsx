@@ -27,7 +27,7 @@ export function Header() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
         if (visible?.target.id) setActiveSection(visible.target.id);
       },
-      { rootMargin: "-34% 0px -56%", threshold: [0.05, 0.2, 0.4] },
+      { rootMargin: "-34% 0px -56%", threshold: [0.05, 0.2, 0.4] }
     );
 
     sections.forEach(section => observer.observe(section));
@@ -37,11 +37,20 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div className="mx-auto flex h-15 w-full max-w-[77rem] items-center justify-between rounded-2xl border border-white/10 bg-[#090b17]/80 px-3 shadow-[0_12px_36px_rgba(0,0,0,0.18)] backdrop-blur-xl sm:px-4">
-        <a href="#inicio" aria-label="Voltar ao início" className="group grid size-9 place-items-center rounded-xl border border-white/14 bg-white/[0.035] font-display text-sm font-bold tracking-[-0.1em] text-white transition-colors hover:border-cyan-300/50">
-          <span className="bg-gradient-to-br from-violet-300 to-cyan-300 bg-clip-text text-transparent">MC</span>
+        <a
+          href="#inicio"
+          aria-label="Voltar ao início"
+          className="group grid size-9 place-items-center rounded-xl border border-white/14 bg-white/[0.035] font-display text-sm font-bold tracking-[-0.1em] text-white transition-colors hover:border-cyan-300/50"
+        >
+          <span className="bg-gradient-to-br from-violet-300 to-cyan-300 bg-clip-text text-transparent">
+            MC
+          </span>
         </a>
 
-        <nav aria-label="Navegação principal" className="hidden items-center gap-1 lg:flex">
+        <nav
+          aria-label="Navegação principal"
+          className="hidden items-center gap-1 lg:flex"
+        >
           {siteConfig.navigation.map(item => (
             <a
               key={item.id}
@@ -55,7 +64,13 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center sm:flex">
-          <GradientButton href={getWhatsAppUrl()} target="_blank" rel="noreferrer" showArrow className="group min-h-9 px-3.5 text-xs">
+          <GradientButton
+            href={getWhatsAppUrl()}
+            target="_blank"
+            rel="noreferrer"
+            showArrow
+            className="group min-h-9 px-3.5 text-xs"
+          >
             <MessageCircle aria-hidden="true" className="size-3.5" />
             Falar comigo
           </GradientButton>
@@ -83,11 +98,22 @@ export function Header() {
           >
             <nav aria-label="Navegação móvel" className="grid gap-1">
               {siteConfig.navigation.map(item => (
-                <a key={item.id} href={item.href} onClick={() => setMenuOpen(false)} className="rounded-xl px-4 py-3 text-sm font-bold text-slate-200 transition-colors hover:bg-white/[0.06] hover:text-cyan-200">
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 text-sm font-bold text-slate-200 transition-colors hover:bg-white/[0.06] hover:text-cyan-200"
+                >
                   {item.label}
                 </a>
               ))}
-              <a href={getWhatsAppUrl()} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)} className="mt-1 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-3 text-sm font-bold text-white">
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="mt-1 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-3 text-sm font-bold text-white"
+              >
                 <MessageCircle className="size-4" /> Falar comigo
               </a>
             </nav>
@@ -97,4 +123,3 @@ export function Header() {
     </header>
   );
 }
-

@@ -27,27 +27,27 @@ O endereço local é informado pelo servidor de desenvolvimento gerenciado. Não
 
 ## Estrutura relevante
 
-| Caminho | Responsabilidade |
-| --- | --- |
-| `client/src/components/ui/` | Primitives genéricas com JSDoc e catálogo de reuso. |
-| `client/src/components/sections/` | Composições específicas desta landing page. |
-| `client/src/lib/data/` | Conteúdo tipado de serviços, cases e stack. |
-| `client/src/lib/site.ts` | Contatos, Instagram, navegação e URLs de WhatsApp. |
-| `server/contact.ts` | Validação, honeypot, rate limit e integração opcional com Resend. |
-| `server/routers.ts` | Contrato tRPC do formulário. |
-| `drizzle/schema.ts` | Modelos `users` e `contacts`. |
-| `client/public/robots.txt` | Instrução básica para rastreadores. |
-| `client/public/sitemap.xml` | Sitemap com domínio placeholder. |
+| Caminho                           | Responsabilidade                                                  |
+| --------------------------------- | ----------------------------------------------------------------- |
+| `client/src/components/ui/`       | Primitives genéricas com JSDoc e catálogo de reuso.               |
+| `client/src/components/sections/` | Composições específicas desta landing page.                       |
+| `client/src/lib/data/`            | Conteúdo tipado de serviços, cases e stack.                       |
+| `client/src/lib/site.ts`          | Contatos, Instagram, navegação e URLs de WhatsApp.                |
+| `server/contact.ts`               | Validação, honeypot, rate limit e integração opcional com Resend. |
+| `server/routers.ts`               | Contrato tRPC do formulário.                                      |
+| `drizzle/schema.ts`               | Modelos `users` e `contacts`.                                     |
+| `client/public/robots.txt`        | Instrução básica para rastreadores.                               |
+| `client/public/sitemap.xml`       | Sitemap com domínio placeholder.                                  |
 
 ## Variáveis de ambiente
 
 Preencha no painel de Secrets do projeto quando quiser ativar o envio real por e-mail:
 
-| Variável | Obrigatória para e-mail? | Uso |
-| --- | --- | --- |
-| `RESEND_API_KEY` | Sim | Chave server-side da API do Resend. |
-| `CONTACT_TO_EMAIL` | Sim | Caixa que recebe os contatos. |
-| `CONTACT_FROM_EMAIL` | Sim | Remetente verificado no Resend. |
+| Variável             | Obrigatória para e-mail? | Uso                                 |
+| -------------------- | ------------------------ | ----------------------------------- |
+| `RESEND_API_KEY`     | Sim                      | Chave server-side da API do Resend. |
+| `CONTACT_TO_EMAIL`   | Sim                      | Caixa que recebe os contatos.       |
+| `CONTACT_FROM_EMAIL` | Sim                      | Remetente verificado no Resend.     |
 
 O formulário pode ser desenvolvido e testado sem essas variáveis. Para habilitar o envio, crie uma API key no Resend, verifique o domínio remetente e preencha os três valores no painel do projeto. Não coloque valores em arquivos versionados nem no código do navegador.
 

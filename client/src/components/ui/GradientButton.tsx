@@ -21,10 +21,21 @@ export function GradientButton({
   ...props
 }: GradientButtonProps) {
   return (
-    <a className={cn("gradient-button", `gradient-button--${variant}`, className)} {...props}>
+    <a
+      className={cn(
+        "gradient-button",
+        `gradient-button--${variant}`,
+        className
+      )}
+      {...props}
+    >
       <span>{children}</span>
-      {showArrow ? <ArrowUpRight aria-hidden="true" className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> : null}
+      {showArrow ? (
+        <ArrowUpRight
+          aria-hidden="true"
+          className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+        />
+      ) : null}
     </a>
   );
 }
-
